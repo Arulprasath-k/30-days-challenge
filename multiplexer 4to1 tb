@@ -1,0 +1,12 @@
+module mux4to1_tb;
+reg [3:0] d;
+reg [1:0] sel;
+wire y;
+mux4to1 utt(.d(d),.sel(sel),.y(y));
+initial begin
+#10 d=4'b0000; sel=2'b00;
+#10 d=4'b0001; sel=2'b01;
+#10 d=4'b0010; sel=2'b10;
+#10 d=4'b0111; sel=2'b11;
+end
+endmodule
