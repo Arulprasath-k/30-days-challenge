@@ -1,0 +1,15 @@
+module jkflop_tb;
+reg j;
+reg k;
+reg clk;
+wire q;
+wire q2;
+jkflop uut(.j(j),.k(k),.clk(clk));
+always #5 clk=~clk;
+initial begin
+#10 j=0; k=0;
+#10 j=0; k=1;
+#10 j=1; k=0;
+#10 j=1; k=1;
+end
+endmodule
