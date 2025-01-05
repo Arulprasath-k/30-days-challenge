@@ -1,0 +1,21 @@
+module Dflop_tb;
+reg d;
+reg reset;
+reg clk;
+wire q;
+Dflop uut(.d(d),.reset(reset),.clk(clk));
+initial begin
+clk=0;
+forever #5 clk=~clk;
+end
+initial begin
+reset=0;
+d=0;
+#10 reset=1;
+#10 reset=0;
+#10 d=1;
+#20 d=0;
+#20 d=1;
+#40 $finish;
+end
+endmodule
