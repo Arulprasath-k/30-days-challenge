@@ -1,0 +1,22 @@
+module Tflop_tb;
+reg T;
+reg clk;
+reg reset;
+wire q;
+wire q3;
+Tflop uut(.clk(clk),.reset(reset),.T(T));
+initial begin
+clk=0;
+forever #5 clk=~clk;
+end
+initial begin
+T=0;
+reset=0;
+#10 reset=1;
+#10 reset=0;
+#10 T=0;
+#20 T=1;
+#30 T=0;
+#40 $finish;
+end
+endmodule
