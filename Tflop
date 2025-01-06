@@ -1,0 +1,21 @@
+module Tflop(
+input clk,
+input reset,
+input T,
+output reg q,
+output reg q3
+);
+always@(posedge clk)
+begin
+if(reset)
+begin
+q<=0;
+q3<=0;
+end
+else
+begin
+q<=T;
+q3<=~T;
+end
+end 
+endmodule
