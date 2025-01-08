@@ -1,0 +1,16 @@
+module SRflop_tb;
+reg s;
+reg r;
+wire q;
+wire q2;
+SRflop uut(.s(s),.r(r));
+initial begin
+#10 s=0; r=0;
+#10 s=0; r=1;
+#10 s=1; r=0;
+#10 s=1; r=1;
+end
+endmodule
+
+
+
